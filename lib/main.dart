@@ -1,4 +1,10 @@
+import 'package:act10Carbajal/pantallaini.dart';
 import 'package:flutter/material.dart';
+import 'package:act10Carbajal/Cliente.dart';
+import 'package:act10Carbajal/Local.dart';
+import 'package:act10Carbajal/Repartidor.dart';
+import 'package:act10Carbajal/productos.dart';
+import 'package:act10Carbajal/ventas.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,36 +14,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: {
+        '/': (context) => PantallaIni(),
+        '/productos': (context) => Productos(),
+        '/Repartidor': (context) => Repartidor(),
+        '/ventas': (context) => Ventas(),
+        '/Local': (context) => Local(),
+        '/Cliente': (context) => Cliente(),
+      },
     );
   }
 }
